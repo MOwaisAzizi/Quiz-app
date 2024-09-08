@@ -1,10 +1,6 @@
-function Main({childern}) {
-    return (
-      <main className="main">
-       {childern}
-      </main>
-    );
+  
+  function Main({ children }) {
+    return <main className="main">{children}</main>;
   }
   
   export default Main;
-  
