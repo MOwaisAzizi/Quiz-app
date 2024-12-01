@@ -44,17 +44,13 @@ function reducer(state, action) {
 export default function App() {
    const [{ status, questions, index, answer, points, highscore, secondRemaining }, dispatch] = useReducer(reducer, initialState)
 
-
    const numQuestions = questions.length
-
    const maxPosiblePoints = questions.reduce((pre, cur) => pre + cur.points, 0)
-
 
    useEffect(function () {
       fetch('http://localhost:8000/questions').then(res => res.json())
          .then(data => dispatch({ type: 'dataResived', payload: data })).catch(err => dispatch({ type: 'dataFailed' }))
    }, [])
-
 
    return (
       <div className="app">
